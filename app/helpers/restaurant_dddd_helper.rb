@@ -1,0 +1,2 @@
+module RestaurantDdddHelper
+end
