@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # Seed data for Pizzas
+# Clear existing data
+RestaurantPizza.destroy_all
+Restaurant.destroy_all
+Pizza.destroy_all
+
 pizza_data = [
   { name: "Margherita", ingredients: "Tomato, Mozzarella, Basil" },
   { name: "Pepperoni", ingredients: "Tomato, Mozzarella, Pepperoni" },
@@ -27,9 +32,11 @@ restaurants = Restaurant.create(restaurant_data)
 
 # Seed data for RestaurantPizzas
 restaurant_pizza_data = [
-  { price: 10, pizza: pizzas[0], restaurant: restaurants[0] },
-  { price: 12, pizza: pizzas[1], restaurant: restaurants[1] },
-  { price: 15, pizza: pizzas[2], restaurant: restaurants[2] },
+        { price: 10, pizza: pizzas[0], restaurant: restaurants[0] },
+        { price: 12, pizza: pizzas[1], restaurant: restaurants[1] },
+        { price: 15, pizza: pizzas[2], restaurant: restaurants[2] },
+        { price: 11, pizza: pizzas[1], restaurant: restaurants[0] },
+        { price: 14, pizza: pizzas[2], restaurant: restaurants[1] }
   # Add more restaurant_pizza records if needed
 ]
 
